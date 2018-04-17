@@ -1,0 +1,40 @@
+# Config
+# ======
+source-file ~/.config/tmux/bindings
+source-file ~/.config/tmux/theme
+
+# Use mouse
+set -g mouse on
+# Don't rename windows automatically
+set-option -g allow-rename off
+
+# loud or quiet?
+set-option -g visual-activity off
+set-option -g visual-bell on
+set-option -g visual-silence on
+set-window-option -g monitor-activity on
+set-option -g bell-action none
+
+# Tmux plugin manager
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @plugin 'tmux-plugins/tmux-copycat'
+set -g @plugin 'tmux-plugins/tmux-open'
+set -g @plugin 'tmux-plugins/tmux-yank'
+
+# Tmux-resurrect
+set -g @resurrect-processes 'ssh mosh'
+# Tmux-continuum
+set -g @continuum-restore 'on'
+
+# Other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+#
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+# $ git clone https://github.com/tmux-plugins/tpm ~/config/tmux/plugins/tpm
+run '~/.config/tmux/plugins/tpm'
