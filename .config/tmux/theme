@@ -34,9 +34,7 @@ set -g pane-active-border-style "fg=$STATUS_BAR,bg=$STATUS_BG"
 
 # Statusbar {
 set -g status-position bottom
-set -g status-fg $STATUS_FG
-set -g status-bg $STATUS_BAR
-set -g status-style "dim"
+set -g status-style "fg=$STATUS_FG,bg=$STATUS_BAR,dim"
 set -g status-left "#[bg=$STATUS_BG]#[fg=$DIMINISH]#H #[fg=$STATUS_FG,bold]#S#[bg=$STATUS_BAR,fg=$STATUS_BG]"
 set -g status-right "#[bg=$STATUS_BAR,fg=$STATUS_BG]#[bg=$STATUS_BG,fg=$STATUS_FG_ACTIVE,bold]%H:%M #[fg=$STATUS_FG_ACTIVE,nobold]%a %d/%m/%Y"
 set -g status-left-length 40
@@ -45,7 +43,7 @@ set -g status-right-length 30
 setw -g window-status-current-style "fg=$STATUS_FG_ACTIVE,bg=$STATUS_BG_ACTIVE,bold"
 setw -g window-status-current-format "#[bg=$STATUS_BAR,fg=$STATUS_BG_ACTIVE]#[fg=$HIGHLIGHT,bg=$STATUS_BG_ACTIVE]#I #[fg=$STATUS_FG_ACTIVE]#W #[fg=$HIGHLIGHT_ALT]#F#[bg=$STATUS_BAR,fg=$STATUS_BG_ACTIVE]"
 
-setw -g window-status-style "fg=$STATUS_FG,bg=$STATUS_BG, none"
+setw -g window-status-style "fg=$STATUS_FG,bg=$STATUS_BG,none"
 setw -g window-status-format " #[fg=$DIMINISH_ALT]#I #[fg=$STATUS_FG]#W #[fg=$DIMINISH_ALT]#F "
 
 setw -g window-status-activity-style "bg=$STATUS_ALERT_FG,bg=$STATUS_ALERT_BG,none"
